@@ -1,0 +1,11 @@
+Nom Entreprise;Adresse;Code Postal;Commune;SA;Type dechet;lat;lon;Statut (demandeur/proposeur)
+RenovPlast;Route de la Gléziole;36140;Montchevrier;Artisanat;Plastique;46.475660;1.741216;
+Durand SARL;2 Rue de l'Abbé Guy;23220;Linard;Logistique;Metal;46.360620;1.879417;
+CocoPaper;Vierge du Poirond;36140;Montchevrier;Industriel;Papier et Bois;46.462538;1.782750;
+Menuiserie Lafont;22 Route de Nouziers;23220;Mortroux;Artisanat;Papier et Bois;46.405232;1.930157;
+BoisBIR;6 Chibert;23380;Glénic;Artisanat;Papier et Bois;46.244319;1.922059;
+StepPlastic;24 Rue Bernard Triclot;23000;Guéret;Industriel;Plastique;46.181105;1.897867;
+Electromach;1 Route de Mornat;23150;Lavaveix-les-Mines;Industriel;Metal;46.082831;2.091469;
+Didier Martin;Les Côtes;63440;Saint-Rémy-de-Blot;Logistique;Plastique;46.073382;2.923849;
+ProcessPile;Montaligere;63390;Sainte-Christine;Industriel;Metal;46.080026;2.827452;
+Josette & Bois;La Bourgeade;63390;Espinasse;Artisanat;Papier et Bois;46.029704;2.681511;
