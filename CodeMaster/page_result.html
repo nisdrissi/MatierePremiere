@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>meetAndReboot</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link href="style_ex_header" rel="stylesheet">
+
+    <style type="text/css" ;  content="text/html; charset=UTF-8" > 
+      /*
+      html, body, #basicMap {
+          width: 50%;
+          height: 50%;
+          margin-bottom: 100px;
+      }
+      */
+      body {
+        margin:auto; padding:0, border:0; height: 380px; width:1180px; background-color: LightGrey;
+      }
+      #basicMap {
+        height: 300px;
+      }
+
+     /* #option{
+        float: center;
+       }
+      #go{
+        float:left;
+      }
+      #other{
+        float:center;
+      }
+      #notConvinced{
+        float:center;
+      }*/
+    </style>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script>
+      function init() {
+        map = new OpenLayers.Map("basicMap");
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+      
+        map.setCenter(new OpenLayers.LonLat(2.345917,48.855604) // Centre de la carte
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transformation de WGS 1984
+            new OpenLayers.Projection("EPSG:900913") // en projection Mercator sphérique
+          ), 8 // Zoom level
+        );
+        var circle = L.circle([2.345917,48.855604], 500, {
+          color: 'blue',
+          fillColor: 'blue',
+          fillOpacity: 0.5
+          }).addTo(map);
+        var marker = L.marker([51.5, -0.09]).addTo(map);
+      }
+    </script>
+  </head>
+  <body onload="init();" style="">
+
+
+
+
+    <div class="row" style= "background:LightGrey ; width:1180px; margin-left:auto ; background-color: LightGrey">
+    <div  style="height=50px">
+    </div>
+      <div class="col-md-2" style= "left:0% ; margin-top:6px ; margin-bottom:6px"><img src="logo.png" height="40%" width="100%" alt="Logo de Meet&Reboot"/>
+      </div>
+      <div class="col-md-8" style= "padding-left:0"> 
+        <a href="Exemple_Header.html" title="Accueil Meet&Reboot" style="color:#8CC63F; font-size: 4.0em ; margin:0 ; padding:0 ; border:0; text-decoration:none">Meet</a>
+        <a href="Exemple_Header.html" title="Accueil Meet&Reboot" style="color:#056839; font-size: 4.0em ; margin:0 ; padding:0 ; border:0;text-decoration:none">&</a>   
+       <a href="Exemple_Header.html" title="Accueil Meet&Reboot" style="color:#8CC63F; font-size: 4.0em ; margin:0 ; padding:0 ; border:0; text-decoration:none">Reboot</a>  
+        <div style= "font-size:1.3em ;margin:0; border:0; color: grey;">Et si vos déchets avaient de la Valeur ?
+        </div>  
+      </div>
+  </div>
+
+
+    <div class="navbar-wrapper" style="margin:auto;  padding:0; border:0;width:1180px">
+      <div class="container" style="margin:auto; padding:0; border:0 ;width:1180px;">
+
+        <nav class="navbar navbar-inverse navbar-static-top" style="width:1180px; padding-left:0px">
+          <div class="container" style=style="margin:auto;border:0">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#about">Page d accueil</a></li>
+                <li><a href="#contact">Qui sommes-nous ?</a></li>
+                <li><a href="#contact">Nos services personnalisés</a></li>
+                <li><a href="#contact">Comprendre le recyclage</a></li>
+                <li><a href="#contact">Nous contacter</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+
+
+
+      <div class="col-md-6">
+
+      <h1 style:"text-align: center">
+        Notre solution privilégiée : 
+      </h1>
+      <h2>
+        (La plus proche de chez vous pour votre recherche)
+      </h2>
+      <h1>
+        Nom : Entreprise Dubois
+      </h1>
+      <h1>
+        Domaine d'Activité : Menuiserie
+      </h1>
+      <h1>
+        Déchet concerné: Bois
+      </h1>
+    <div id="option">
+      <input id="go" type="button" value="GO Meet&Reboot" class="btn btn-success">
+      <input id="other" type="button" value="Autres propositions" class="btn btn-success">
+      <input id="notConvinced" type="button" value="Pas convaincu" class="btn btn-success">
+    </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div id="basicMap">
+        </div>
+      </div>
+    </div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
