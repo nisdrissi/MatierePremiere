@@ -38,6 +38,7 @@
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script>
       function init() {
+        /*
         map = new OpenLayers.Map("basicMap");
         var mapnik = new OpenLayers.Layer.OSM();
         map.addLayer(mapnik);
@@ -48,21 +49,60 @@
             new OpenLayers.Projection("EPSG:900913") // en projection Mercator sphérique
           ), 8 // Zoom level
         );
-        var circle = L.circle([2.345917,48.855604], 500, {
-          color: 'blue',
-          fillColor: 'blue',
-          fillOpacity: 0.5
-          }).addTo(map);
-        var marker = L.marker([51.5, -0.09]).addTo(map);
+        */
+        function geopUrl (key, layer, format)
+        {  return "http://wxs.ign.fr/"+ key + "/wmts?LAYER=" + layer
+              +"&EXCEPTIONS=text/xml&FORMAT="+(format?format:"image/jpeg")
+              +"&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal"
+              +"&TILEMATRIXSET=PM&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}" ;
+        }
+        var apiKey='6h7gnc76fmw25k5kug8cz9gg';
+        map = L.map('basicMap').setView([49.8, 3.1], 8);
+        L.tileLayer ( geopUrl(apiKey,"GEOGRAPHICALGRIDSYSTEMS.MAPS"),
+        {   attribution:'&copy; <a href="http://www.ign.fr/">IGN-France</a>',
+            maxZoom:18
+        } ).addTo(map);
+
+    var greenIcon = L.icon({
+      iconUrl: 'leaf-green.png',
+      shadowUrl: 'leaf-shadow.png',
+      iconSize:     [38, 95], // size of the icon
+      shadowSize:   [50, 64], // size of the shadow
+      iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+      shadowAnchor: [4, 62],  // the same for the shadow
+      popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    L.marker([50,3], {icon: greenIcon}).addTo(map);
+
+    var redIcon = L.icon({
+            iconUrl: 'leaf-red.png',
+            shadowUrl: 'leaf-shadow.png',
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    L.marker([49.5,3.23], {icon: redIcon}).addTo(map);
       }
     </script>
+    <style type="text/css">
+html{
+  background: white;
+}
+body{
+  height:100%;
+}
+    </style>
   </head>
   <body onload="init();" style="">
 
 
 
 
-    <div class="row" style= "background:LightGrey ; width:1180px; margin-left:auto ; background-color: LightGrey">
+    <div class="row" style= "width:1180px; margin-left:auto ">
     <div  style="height=50px">
     </div>
       <div class="col-md-2" style= "left:0% ; margin-top:6px ; margin-bottom:6px"><img src="logo.png" height="40%" width="100%" alt="Logo de Meet&Reboot"/>
@@ -124,9 +164,9 @@
         Déchet concerné: Bois
       </h1>
     <div id="option">
-      <input id="go" type="button" value="GO Meet&Reboot" class="btn btn-success">
-      <input id="other" type="button" value="Autres propositions" class="btn btn-success">
-      <input id="notConvinced" type="button" value="Pas convaincu" class="btn btn-success">
+      <input id="go" type="button" value="GO Meet&Reboot" class="btn btn-success btn-lg">
+      <input id="other" type="button" value="Autres propositions" class="btn btn-success btn-lg">
+      <input id="notConvinced" type="button" value="Pas convaincu" class="btn btn-success btn-lg">
     </div>
       </div>
 

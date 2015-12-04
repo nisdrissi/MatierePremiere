@@ -1,0 +1,32 @@
+html {
+	background: white;
+}
+body {
+	width: 1180px;
+	margin: auto;
+	background: lightgrey;
+}
+.titreFormulaire {
+	margin-top: 20px;
+	margin-bottom:10px;
+	text-align: center;
+	font-weight: bold;
+}
+.monForm {
+	padding-bottom: 50px;
+}
+.monSubmit {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.form-control {
+	margin: 5px 0;
+}
+.form-horizontal .form-group {
+	margin: 0;
+}
+.formAccueil{
+	position:absolute;
+	left:185px;
+	top:190px;
+}
